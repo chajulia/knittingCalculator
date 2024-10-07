@@ -1,0 +1,191 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #e6f2ff;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+.container {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.language-switcher {
+  margin-left: 15px;
+}
+
+.language-btn {
+  background-color: #0077b6;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.language-btn:hover {
+  background-color: #023e8a;
+}
+
+.gauge-forms {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.gauge-section {
+  width: 48%;
+  background-color: #f7fbff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.gauge-section h2 {
+  font-size: 18px;
+  color: #2d5c8a;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #2d5c8a;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #66a3ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #4d88e0;
+  transform: translateY(-2px);
+}
+
+.result {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  display: none;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.result p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #333;
+}
+
+.calculators {
+  margin-top: 20px;
+  display: flex; /* Change from grid to flex for better alignment */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-between; /* Align items with space between */
+  gap: 20px; /* Space between calculator sections */
+}
+
+.calculator-section {
+  background-color: #f7fbff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  flex: 1 1 calc(48% - 20px); /* Allow two calculators side by side */
+  max-width: 400px; /* Limit maximum width */
+}
+
+.calculator-section h2 {
+  font-size: 18px;
+  color: #2d5c8a;
+  margin-bottom: 10px;
+}
+
+.calculator-section button {
+  margin-top: 10px;
+}
+
+/* Manual Button */
+.manual-button {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 8px;
+  background-color: #0077b6;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Manual content (hidden by default) */
+
+.manual-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  color: #333;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  top: 30px;
+  left: -10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.9em;
+  z-index: 1000;
+}
+
+/* Show manual content on hover */
+.manual-button:hover .manual-content {
+  display: block;
+}
+
+/* Style the manual button */
+.manual-button:hover {
+  background-color: #023e8a;
+}

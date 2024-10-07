@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knitting Calculators</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Knitting Calculators
+
+        <!-- Language Switcher Button -->
+        <div class="language-switcher">
+          <button id="langBtn" class="language-btn">ENG</button>
+        </div>
+      </h1>
+
+      <!-- Gauge Forms -->
+      <div class="calculators">
+        <div class="calculator-section">
+          <h2
+            data-lang-en=" Original Pattern Gauge"
+            data-lang-ko="원본 패턴 게이지"
+          >
+            Original Pattern Gauge
+            <!-- Help Button -->
+            <div class="manual-button">
+              ?
+              <!-- Hidden Manual Content -->
+              <div
+                class="manual-content"
+                data-lang-en="Enter the gauge of original pattern."
+                data-lang-ko="원 패턴의 게이지를 입력하세요."
+              >
+                Enter the gauge of original pattern.
+              </div>
+            </div>
+          </h2>
+          <form id="originalGaugeForm">
+            <div class="input-group">
+              <label
+                for="origStitches"
+                data-lang-en="Stitches (per 4 inches/10 cm)"
+                data-lang-ko="콧수(per 4 inches/10 cm)"
+                >Stitches (per 4 inches/10 cm)</label
+              >
+              <input type="number" class="origStitches" required />
+            </div>
+            <div class="input-group">
+              <label
+                for="origRows"
+                data-lang-en="Rows (per 4 inches/10 cm)"
+                data-lang-ko="줄수(per 4 inches/10 cm)"
+                >Rows (per 4 inches/10 cm)</label
+              >
+              <input type="number" class="origRows" required />
+            </div>
+          </form>
+          <h2 data-lang-en="Current Gauge" data-lang-ko="현재 편물 게이지">
+            Current Gauge
+            <!-- Help Button -->
+            <div class="manual-button">
+              ?
+              <!-- Hidden Manual Content -->
+              <div
+                class="manual-content"
+                data-lang-en="Enter the current gauge."
+                data-lang-ko="현재 편물의 게이지를 입력하세요."
+              >
+                Enter the current gauge.
+              </div>
+            </div>
+          </h2>
+          <form id="currentGaugeForm">
+            <div class="input-group">
+              <label
+                for="currStitches"
+                data-lang-en="Stitches (per 4 inches/10 cm)"
+                data-lang-ko="콧수(per 4 inches/10 cm)"
+                >Stitches (per 4 inches/10 cm)</label
+              >
+              <input type="number" class="currStitches" required />
+            </div>
+            <div class="input-group">
+              <label
+                for="currRows"
+                data-lang-en="Rows (per 4 inches/10 cm)"
+                data-lang-ko="줄수(per 4 inches/10 cm)"
+                >Rows (per 4 inches/10 cm)</label
+              >
+              <input type="number" class="currRows" required />
+            </div>
+          </form>
+        </div>
+
+        <!-- Individual Calculators -->
+
+        <div class="calculator-section">
+          <h2 data-lang-en="Stitch Calculator" data-lang-ko="콧수 계산기">
+            Stitch Calculator
+            <!-- Help Button -->
+            <div class="manual-button">
+              ?
+              <!-- Hidden Manual Content -->
+              <div
+                class="manual-content"
+                data-lang-en="Enter the stitches of the original pattern that you want to adjust, then click 'Calculate Stitches' to get the adjusted number."
+                data-lang-ko="조정하고자 하는 패턴의 콧수를 입력하고 계산 버튼을 누르면 수정된 콧수가 나옵니다."
+              >
+                Enter the stitches of the original pattern that you want to
+                adjust, then click 'Calculate Stitches' to get the adjusted
+                number.
+              </div>
+            </div>
+          </h2>
+          <form id="stitchCalcForm">
+            <div class="input-group">
+              <label
+                for="stitches"
+                data-lang-en="Stitches of Original Pattern"
+                data-lang-ko="원본 패턴의 콧수"
+                >Stitches of Original Pattern</label
+              >
+              <input type="number" class="stitches" required />
+            </div>
+            <button
+              class="stitCalcButt"
+              type="submit"
+              data-lang-en="Calculate Stitches"
+              data-lang-ko="콧수 계산하기"
+            >
+              Calculate Stitches
+            </button>
+          </form>
+          <div id="stitchResult" class="result">
+            <p>
+              <strong>Stitches per Inch:</strong> <span id="stitchGauge"></span>
+            </p>
+          </div>
+          <h2 data-lang-en="Row Calculator" data-lang-ko="줄수 계산기">
+            Row Calculator
+            <!-- Help Button -->
+            <div class="manual-button">
+              ?
+              <!-- Hidden Manual Content -->
+              <div
+                class="manual-content"
+                data-lang-en="Enter the rows of the original pattern that you want to adjust, then click 'Calculate Rows' to get the adjusted number."
+                data-lang-ko="조정하고자 하는 패턴 편물의 줄의 수를 입력하고 계산 버튼을 누르면 수정된 줄 수가 나옵니다."
+              >
+                Enter the rows of the original pattern that you want to adjust,
+                then click 'Calculate Rows' to get the adjusted number.
+              </div>
+            </div>
+          </h2>
+          <form id="rowCalcForm">
+            <div class="input-group">
+              <label
+                for="rows"
+                data-lang-en="Rows of Original Pattern"
+                data-lang-ko="원본 패턴의 줄수"
+                >Rows of Original Pattern</label
+              >
+              <input type="number" class="rows" id="rows" required />
+            </div>
+
+            <button
+              class="rowCalcButt"
+              type="submit"
+              data-lang-en="Calculate Rows"
+              data-lang-ko="줄수 계산하기"
+            >
+              Calculate Rows
+            </button>
+          </form>
+          <div id="rowResult" class="result">
+            <p><strong>Rows per Inch:</strong> <span id="rowGauge"></span></p>
+          </div>
+        </div>
+
+        <div class="calculator-section">
+          <h2
+            data-lang-en="Knitting Increase Calculator"
+            data-lang-ko="콧수 늘리기 계산기"
+          >
+            Knitting Increase Calculator
+
+            <div class="manual-button">
+              ?
+
+              <div
+                class="manual-content"
+                data-lang-en="Enter the current stitches and increase stitches count, then click 'Calculate Evenly Increasing' to get evenly increasing pattern."
+                data-lang-ko="현재 콧수와 늘리고자 하는 콧수를 입력하고 계산 버튼을 누르면 한 줄을 동일한 간격으로 늘리는 패턴이 생성됩니다."
+              >
+                Enter the current stitches and increase stitches count, then
+                click 'Calculate Evenly Increasing' to get evenly increasing
+                pattern.
+              </div>
+            </div>
+          </h2>
+          <form id="incCalcForm">
+            <div class="input-group">
+              <label
+                for="incCurCalc"
+                data-lang-en="Current Stitches"
+                data-lang-ko="현재 콧수"
+                >Current Stitches</label
+              >
+              <input type="number" class="incCurr" required />
+            </div>
+            <div class="input-group">
+              <label
+                for="incNumCalc"
+                data-lang-en="Increase Stitches Count"
+                data-lang-ko="늘리고자 하는 콧수"
+                >Increase Stitches Count</label
+              >
+              <input type="number" class="incNum" required />
+            </div>
+            <button
+              class="incCalcButt"
+              type="submit"
+              data-lang-en="Calculate Evenly Increasing"
+              data-lang-ko="균일하게 늘리기 계산하기"
+            >
+              Calculate Evenly Increasing
+            </button>
+          </form>
+          <div id="incResult" class="result">
+            <p><strong>Rows per Inch:</strong> <span id="rowGauge"></span></p>
+          </div>
+        </div>
+
+        <div class="calculator-section">
+          <h2
+            data-lang-en="Knitting Decrease Calculator"
+            data-lang-ko="콧수 줄이기 계산기"
+          >
+            Knitting Decrease Calculator
+
+            <div class="manual-button">
+              ?
+
+              <div
+                class="manual-content"
+                data-lang-en="Enter the current stitches and decrease stitches count, then click 'Calculate Evenly Decreasing' to get evenly decreasing pattern."
+                data-lang-ko="현재 콧수와 줄이고자 하는 콧수를 입력하고 계산 버튼을 누르면 한 줄을 동일한 간격으로 줄이는 패턴이 생성됩니다."
+              >
+                Enter the current stitches and decrease stitches count, then
+                click 'Calculate Evenly Decreasing' to get evenly decreasing
+                pattern.
+              </div>
+            </div>
+          </h2>
+          <form id="decCalcForm">
+            <div class="input-group">
+              <label
+                for="decCurCalc"
+                data-lang-en="Current Stitches"
+                data-lang-ko="현재 콧수"
+                >Current Stitches</label
+              >
+              <input type="number" class="decCurr" required />
+            </div>
+            <div class="input-group">
+              <label
+                for="decNumCalc"
+                data-lang-en="Decrease Stitches Count"
+                data-lang-ko="줄이고자 하는 콧수"
+                >Decrease Stitches Count</label
+              >
+              <input type="number" class="decNum" required />
+            </div>
+            <button
+              class="decCalcButt"
+              type="submit"
+              data-lang-en="Calculate Evenly Decreasing"
+              data-lang-ko="콧수 줄이기 계산하기"
+            >
+              Calculate Evenly Decreasing
+            </button>
+          </form>
+          <div id="decResult" class="result">
+            <p><strong>Rows per Inch:</strong> <span id="rowGauge"></span></p>
+          </div>
+        </div>
+
+        <div class="calculator-section">
+          <h2 data-lang-en="Swatch Calculator" data-lang-ko="스와치 계산기">
+            Swatch Calculator
+            <!-- Help Button -->
+            <div class="manual-button">
+              ?
+              <!-- Hidden Manual Content -->
+              <div
+                class="manual-content"
+                data-lang-en="Enter the stitches and the rows and current swatch, then click 'Calculate Swatch Dimensions' to get 4*4(inches) or 10*10(cm) swatch gauge."
+                data-lang-ko="현재 스와치 사이즈의 콧수와 줄수를 입력하고 계산 버튼을 클릭하면 10*10(cm) 혹은 4*4(인치)의 스와치 게이지가 계산됩니다."
+              >
+                Enter the stitches and the rows and current swatch, then click
+                'Calculate Swatch Dimensions' to get 4*4(inches) or 10*10(cm)
+                swatch gauge.
+              </div>
+            </div>
+          </h2>
+          <form id="swatchCalcForm">
+            <div class="input-group">
+              <label
+                for="swatchStitches"
+                data-lang-en="Total Stitches (per current width)"
+                data-lang-ko="현재 스와치 가로의 콧수"
+                >Total Stitches (per current width)</label
+              >
+              <input
+                type="number"
+                class="swatchStitches"
+                step="0.01"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label
+                for="swatchRows"
+                data-lang-en="otal Rows (per current height)"
+                data-lang-ko="현재 스와치 세로의 줄수"
+                >Total Rows (per current height)</label
+              >
+              <input type="number" class="swatchRows" step="0.01" required />
+            </div>
+            <div class="input-group">
+              <label
+                for="swatchWidth"
+                data-lang-en="Current Width (inches/cm)"
+                data-lang-ko="현재 스와치 가로 크기(인치/센티미터)"
+                >Current Width (inches/cm)</label
+              >
+              <input type="number" class="swatchWidth" step="0.01" required />
+            </div>
+            <div class="input-group">
+              <label
+                for="swatchHeight"
+                data-lang-en="Current Height (inches/cm)"
+                data-lang-ko="현재 스와치 세로 크기(인치/센티미터)"
+                >Current Height (inches/cm)</label
+              >
+              <input type="number" class="swatchHeight" step="0.01" required />
+            </div>
+            <div class="input-group">
+              <label
+                for="swatchGaugeUnit"
+                data-lang-en="Unit"
+                data-lang-ko="단위"
+                >Unit</label
+              >
+              <select id="swatchGaugeUnit">
+                <option
+                  value="inches"
+                  data-lang-en="Inches"
+                  data-lang-ko="인치"
+                >
+                  Inches
+                </option>
+                <option
+                  value="cm"
+                  data-lang-en="Centimeters"
+                  data-lang-ko="센티미터"
+                >
+                  Centimeters
+                </option>
+              </select>
+            </div>
+            <button
+              class="swatCalcButt"
+              type="submit"
+              data-lang-en="Calculate Swatch Dimensions"
+              data-lang-ko="스와치 계산하기"
+            >
+              Calculate Swatch Dimensions
+            </button>
+          </form>
+          <div id="swatchResult" class="result">
+            <p>
+              <strong>Total Stitches:</strong> <span id="totalStitches"></span>
+            </p>
+            <p><strong>Total Rows:</strong> <span id="totalRows"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
